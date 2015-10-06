@@ -1,6 +1,6 @@
-<html>
+ï»¿<html>
 	<head>
-		<title>Lönekalkylatorn</title>
+		<title>LÃ¶nekalkylatorn</title>
 		
 <style type="text/css">
 
@@ -51,26 +51,26 @@ iljform.iljselect.selectedIndex].value;
 	{ 			
 	document.getElementById('timlon').value = (parseInt(document.getElementById('input1').value) ); 
 	
-	//____________Räknar på timlön
-	//Månadslön
+	//____________RÃ¤knar pÃ¥ timlÃ¶n
+	//MÃ¥nadslÃ¶n
 	document.getElementById('manadslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) );
-	//Årslön
+	//Ã…rslÃ¶n
 	document.getElementById('arslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) * 12 );
 			
-	//Netto Timlön		
+	//Netto TimlÃ¶n		
 	document.getElementById('nettotimlon').value = (parseInt(document.getElementById('timlon').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
-	//Netto Månadslön
+	//Netto MÃ¥nadslÃ¶n
 	document.getElementById('nettomanadslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
-	//Netto Årslön
+	//Netto Ã…rslÃ¶n
 	document.getElementById('nettoarslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) * 12 * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
 	
 	//Skatt per timme
 	document.getElementById('skatttimlon').value = (parseInt(document.getElementById('timlon').value) - parseInt(document.getElementById('nettotimlon').value) );
-	//Skatt per månad
+	//Skatt per mÃ¥nad
 	document.getElementById('skattmanadslon').value = (parseInt(document.getElementById('manadslon').value) - parseInt(document.getElementById('nettomanadslon').value) );
-	//Skatt per år, parseint gör om till tal
+	//Skatt per Ã¥r, parseint gÃ¶r om till tal
 	document.getElementById('skattarslon').value = (parseInt(document.getElementById('arslon').value) - parseInt(document.getElementById('nettoarslon').value) );
-	//____________Räknar på timlön	slut
+	//____________RÃ¤knar pÃ¥ timlÃ¶n	slut
 	}
 	
 	if ( document.iljform.iljselect.options[document.iljform.iljselect.selectedIndex].value == 2) 
@@ -78,26 +78,26 @@ iljform.iljselect.selectedIndex].value;
 	document.getElementById('manadslon').value = (parseInt(document.getElementById('input1').value) );
 
 
-	//____________Räknar på månadslön
-	//Timlön
+	//____________RÃ¤knar pÃ¥ mÃ¥nadslÃ¶n
+	//TimlÃ¶n
 	document.getElementById('timlon').value = (parseInt(document.getElementById('manadslon').value) / parseInt(document.getElementById('input2').value) );
-	//Årslön
+	//Ã…rslÃ¶n
 	document.getElementById('arslon').value = (parseInt(document.getElementById('manadslon').value) * 12 );
 			
-	//Netto Timlön		
+	//Netto TimlÃ¶n		
 	document.getElementById('nettotimlon').value = (parseInt(document.getElementById('manadslon').value) / parseInt(document.getElementById('input2').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
-	//Netto Månadslön
+	//Netto MÃ¥nadslÃ¶n
 	document.getElementById('nettomanadslon').value = (parseInt(document.getElementById('manadslon').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
-	//Netto Årslön
+	//Netto Ã…rslÃ¶n
 	document.getElementById('nettoarslon').value = (parseInt(document.getElementById('manadslon').value) * 12 * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
 	
 	//Skatt per timme
 	document.getElementById('skatttimlon').value = (parseInt(document.getElementById('timlon').value) - parseInt(document.getElementById('nettotimlon').value) );
-	//Skatt per månad
+	//Skatt per mÃ¥nad
 	document.getElementById('skattmanadslon').value = (parseInt(document.getElementById('manadslon').value) - parseInt(document.getElementById('nettomanadslon').value) );
-	//Skatt per år, parseint gör om till tal
+	//Skatt per Ã¥r, parseint gÃ¶r om till tal
 	document.getElementById('skattarslon').value = (parseInt(document.getElementById('arslon').value) - parseInt(document.getElementById('nettoarslon').value) );
-	//____________Räknar på månadslön	slut
+	//____________RÃ¤knar pÃ¥ mÃ¥nadslÃ¶n	slut
 
 	}
 
@@ -122,9 +122,9 @@ iljform.iljselect.selectedIndex].value;
 <tr>
 <td><a href="url">Byt jobb</a></td>
 
-<td><a href="url">Lär dig löneförhandla</a></td>
+<td><a href="url">LÃ¤r dig lÃ¶nefÃ¶rhandla</a></td>
 
-<td><a href="url">Lönestatistik</a></td>
+<td><a href="url">LÃ¶nestatistik</a></td>
 
 <td><a href="url">Vilket jobb passar dig?</a></td>
 
@@ -165,15 +165,15 @@ REKLAM
 	<td>
 	<SELECT NAME = "iljselect"
    	onChange = "iljval(); Update();" >
-	<OPTION VALUE="valj">Välj
-	<OPTION onChange="Update()" VALUE="1">Timlön
-	<OPTION onChange="Update()" VALUE="2">Månadslön
+	<OPTION VALUE="valj">VÃ¤lj
+	<OPTION onChange="Update()" VALUE="1">TimlÃ¶n
+	<OPTION onChange="Update()" VALUE="2">MÃ¥nadslÃ¶n
 	</SELECT>
 </FORM>
 	</td></tr>
 	
 <tr><form>
-<td>Din lön:</td>
+<td>Din lÃ¶n:</td>
 <td width="50">&nbsp;</td>
 <td><input id="input1" type="text" name="input1" onkeyup="Update();" />
 
@@ -182,7 +182,7 @@ REKLAM
 </tr>	
 
 <tr>
-<td width="250">Antal timmar per månad:</td>
+<td width="250">Antal timmar per mÃ¥nad:</td>
 <td width="50">&nbsp;</td>
 <td><input id="input2" type="text" name="input2" onkeyup="Update();" value="167" /></td>
 </tr>
@@ -213,9 +213,9 @@ REKLAM
 <tr><td class="tabellrubrik" colspan="4"><center>Resultat</center></td></tr>
 	<tr>
 	<td></td>
-	<td>Timlön</td>
-	<td>Månadslön</td>
-	<td>Årslön</td>
+	<td>TimlÃ¶n</td>
+	<td>MÃ¥nadslÃ¶n</td>
+	<td>Ã…rslÃ¶n</td>
 	</tr>
 
 <tr>
