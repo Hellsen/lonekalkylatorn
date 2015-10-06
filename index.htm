@@ -1,0 +1,259 @@
+<html>
+	<head>
+		<title>Lönekalkylatorn</title>
+		
+<style type="text/css">
+
+.round_corner_table {
+margin: 10px;
+padding: 10px;
+border: 1px solid #95B995;
+border-radius: 15px;
+font-family: Verdana; font-size: 15px;
+box-shadow: 5px 5px 10px rgba(0,0,0, 0.5);
+}
+
+.toptable {
+margin-top: -10px;
+margin-right: -10px;
+margin-left: -10px;
+padding: 10px;
+background-color:#006600;
+}
+
+.tabellrubrik{
+font-family: Verdana; 
+color:#006600; 
+font-size: 19px; 
+font-weight: bold;
+}
+
+
+
+body { font-family: Verdana; font-size: 11px; background-color: white;}
+
+table {font-family: Verdana; font-size: 15px;}
+
+a { font-family: Verdana; font-size: 15px; color: white; text-decoration: none; font-weight: bold;}
+</style>	
+
+<script type="text/javascript">	
+function iljval()
+{
+iljtext=document.iljform.iljselect.options[document.
+iljform.iljselect.selectedIndex].value;
+}
+
+	function Update()
+	{
+	
+	if (document.iljform.iljselect.options[document.iljform.iljselect.selectedIndex].value == 1) 
+	{ 			
+	document.getElementById('timlon').value = (parseInt(document.getElementById('input1').value) ); 
+	
+	//____________Räknar på timlön
+	//Månadslön
+	document.getElementById('manadslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) );
+	//Årslön
+	document.getElementById('arslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) * 12 );
+			
+	//Netto Timlön		
+	document.getElementById('nettotimlon').value = (parseInt(document.getElementById('timlon').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
+	//Netto Månadslön
+	document.getElementById('nettomanadslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
+	//Netto Årslön
+	document.getElementById('nettoarslon').value = (parseInt(document.getElementById('timlon').value) * parseInt(document.getElementById('input2').value) * 12 * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
+	
+	//Skatt per timme
+	document.getElementById('skatttimlon').value = (parseInt(document.getElementById('timlon').value) - parseInt(document.getElementById('nettotimlon').value) );
+	//Skatt per månad
+	document.getElementById('skattmanadslon').value = (parseInt(document.getElementById('manadslon').value) - parseInt(document.getElementById('nettomanadslon').value) );
+	//Skatt per år, parseint gör om till tal
+	document.getElementById('skattarslon').value = (parseInt(document.getElementById('arslon').value) - parseInt(document.getElementById('nettoarslon').value) );
+	//____________Räknar på timlön	slut
+	}
+	
+	if ( document.iljform.iljselect.options[document.iljform.iljselect.selectedIndex].value == 2) 
+	{ 
+	document.getElementById('manadslon').value = (parseInt(document.getElementById('input1').value) );
+
+
+	//____________Räknar på månadslön
+	//Timlön
+	document.getElementById('timlon').value = (parseInt(document.getElementById('manadslon').value) / parseInt(document.getElementById('input2').value) );
+	//Årslön
+	document.getElementById('arslon').value = (parseInt(document.getElementById('manadslon').value) * 12 );
+			
+	//Netto Timlön		
+	document.getElementById('nettotimlon').value = (parseInt(document.getElementById('manadslon').value) / parseInt(document.getElementById('input2').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
+	//Netto Månadslön
+	document.getElementById('nettomanadslon').value = (parseInt(document.getElementById('manadslon').value) * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
+	//Netto Årslön
+	document.getElementById('nettoarslon').value = (parseInt(document.getElementById('manadslon').value) * 12 * (1 - ( parseInt(document.getElementById('input3').value) / 100) ) );
+	
+	//Skatt per timme
+	document.getElementById('skatttimlon').value = (parseInt(document.getElementById('timlon').value) - parseInt(document.getElementById('nettotimlon').value) );
+	//Skatt per månad
+	document.getElementById('skattmanadslon').value = (parseInt(document.getElementById('manadslon').value) - parseInt(document.getElementById('nettomanadslon').value) );
+	//Skatt per år, parseint gör om till tal
+	document.getElementById('skattarslon').value = (parseInt(document.getElementById('arslon').value) - parseInt(document.getElementById('nettoarslon').value) );
+	//____________Räknar på månadslön	slut
+
+	}
+
+
+
+
+	
+
+}
+
+
+
+
+		</script>
+	</head>
+
+
+
+<body>
+<?php include_once("analyticstracking.php") ?>
+<table class="toptable" width="100%">
+<tr>
+<td><a href="url">Byt jobb</a></td>
+
+<td><a href="url">Lär dig löneförhandla</a></td>
+
+<td><a href="url">Lönestatistik</a></td>
+
+<td><a href="url">Vilket jobb passar dig?</a></td>
+
+</tr>
+</table>
+
+
+<br>
+
+<table border="0" align="center">
+<tr>
+<td colspan="3">
+<center><img src="logga.png"></center>
+</td>
+</tr>
+
+<tr>
+<td rowspan="4">REKLAM</td>
+
+<td>
+REKLAM
+</td>
+
+<td rowspan="4">REKLAM</td>
+</tr>
+
+
+<tr>
+<td>
+	
+	<table width="700" border="0" class="round_corner_table" bgcolor="#F0E0B2">
+	
+<tr><td class="tabellrubrik" colspan="3"><center>Fyll i uppgifter</center></td></tr>
+	<tr>
+	<td></td>
+	<td width="50">&nbsp;</td>
+<FORM NAME ="iljform">
+	<td>
+	<SELECT NAME = "iljselect"
+   	onChange = "iljval(); Update();" >
+	<OPTION VALUE="valj">Välj
+	<OPTION onChange="Update()" VALUE="1">Timlön
+	<OPTION onChange="Update()" VALUE="2">Månadslön
+	</SELECT>
+</FORM>
+	</td></tr>
+	
+<tr><form>
+<td>Din lön:</td>
+<td width="50">&nbsp;</td>
+<td><input id="input1" type="text" name="input1" onkeyup="Update();" />
+
+
+</td>
+</tr>	
+
+<tr>
+<td width="250">Antal timmar per månad:</td>
+<td width="50">&nbsp;</td>
+<td><input id="input2" type="text" name="input2" onkeyup="Update();" value="167" /></td>
+</tr>
+
+<tr>
+<td>Skattetabell: </td>
+<td width="50">&nbsp;</td>
+<td><input id="input3" type="text" name="input3" onkeyup="Update();" value="30" /></td>
+</tr>
+
+
+</table>
+
+
+
+</td>
+
+
+		
+</tr>
+
+
+<tr><td>
+
+
+	<table width="700" bgcolor="#F0E0B2" border="0" class="round_corner_table">	
+	
+<tr><td class="tabellrubrik" colspan="4"><center>Resultat</center></td></tr>
+	<tr>
+	<td></td>
+	<td>Timlön</td>
+	<td>Månadslön</td>
+	<td>Årslön</td>
+	</tr>
+
+<tr>
+<td>Brutto</td>
+<td><input id="timlon" type="text" name="timlon" /></td>
+<td><input id="manadslon" type="text" name="manadslon" /></td>
+<td><input id="arslon" type="text" name="arslon" /></td>
+</tr>
+
+<tr>
+<td>Netto</td>
+<td><input id="nettotimlon" type="text" name="nettotimlon" /></td>
+<td><input id="nettomanadslon" type="text" name="nettomanadslon" /></td>
+<td><input id="nettoarslon" type="text" name="nettoarslon" /></td>
+</tr>
+
+<tr>
+<td>Skatt</td>
+<td><input id="skatttimlon" type="text" name="skatttimlon" /></td>
+<td><input id="skattmanadslon" type="text" name="skattmanadslon" /></td>
+<td><input id="skattarslon" type="text" name="skattarslon" /></td>
+</tr>
+
+</table>
+
+
+
+
+</form>
+</td></tr>
+<tr><td>INFO</td></tr>
+</TABLE>
+
+<br>
+<br>
+
+
+
+</body>
+
+</html>
